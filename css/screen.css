@@ -33,6 +33,7 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 .affiliate .affiliate__filter .input:-moz-placeholder, .affiliate .affiliate__filter .input::-moz-placeholder, .affiliate .affiliate__filter .select select:-moz-placeholder, .affiliate .affiliate__filter .select select::-moz-placeholder { color: #6b6b6b; opacity: 1; }
 .affiliate .affiliate__filter .input::-webkit-input-placeholder, .affiliate .affiliate__filter .select select::-webkit-input-placeholder { color: #6b6b6b; }
 .affiliate .affiliate__filter .select { position: relative; height: 25px; background: white; }
+.affiliate .affiliate__filter .select.select_wide { width: 238px; }
 .affiliate .affiliate__filter .select > i { position: absolute; top: 50%; margin-top: -8px; right: 6px; background: url('../img/icons-s4627931396.png') 0 0 no-repeat; width: 17px; height: 16px; }
 .affiliate .affiliate__filter .select select { position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; -webkit-appearance: none; -moz-appearance: none; appearance: normal; text-indent: 0.01px; text-overflow: ""; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; background: transparent; }
 .affiliate .affiliate__filtercol { display: table-cell; padding-left: 20px; }
@@ -41,7 +42,7 @@ table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 .affiliate .affiliate__filterrow { margin-top: 10px; }
 .affiliate .affiliate__filterrow:first-child { margin-top: 0; }
 .affiliate .affiliate__filterlabel { display: inline-block; vertical-align: middle; color: #666666; margin-right: 5px; }
-.affiliate .affiliate__filtergroup { display: inline-block; vertical-align: middle; }
+.affiliate .affiliate__filtergroup { display: inline-block; vertical-align: middle; white-space: nowrap; }
 .affiliate .affiliate__filtergroup .input { width: 72px; }
 .affiliate .affiliate__btn { display: inline-block; font-family: "Tahoma"; font-size: 12px; font-weight: bold; color: white; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; background-color: #fdfdfb; -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #0d97cd), color-stop(100%, #3bbfea)); background-image: -webkit-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: -moz-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: -o-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); line-height: 14px; padding: 7px 28px; white-space: nowrap; text-decoration: none; }
 .affiliate .affiliate__btn.affiliate__btn_lg { padding: 12px 33px; }
