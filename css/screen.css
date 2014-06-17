@@ -1,0 +1,65 @@
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; vertical-align: baseline; }
+
+body, html { height: 100%; }
+
+img, fieldset, a img { border: none; }
+
+input[type="submit"], button { cursor: pointer; }
+input[type="submit"]::-moz-focus-inner, button::-moz-focus-inner { padding: 0; border: 0; }
+
+textarea { overflow: auto; }
+
+input, button { margin: 0; padding: 0; border: 0; }
+
+input, textarea, select, button, h1, h2, h3, h4, h5, h6, a, span, a:focus { outline: none; }
+
+ul, ol { list-style-type: none; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
+table { border-spacing: 0; border-collapse: collapse; width: 100%; }
+
+.page-affiliate { line-height: 1.3; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.affiliate .affiliate__topper { margin-bottom: 20px; }
+.affiliate .affiliate__action { display: table-cell; padding-left: 25px; }
+.affiliate .affiliate__stats { margin-top: 12px; font-size: 11px; color: #a3a3a3; }
+.affiliate .affiliate__stats p { margin: 3px 0; }
+.affiliate .affiliate__statsnum { font-weight: bold; color: black; }
+.affiliate .affiliate__filter { display: table-cell; padding: 20px; border: 1px solid #e5dfbf; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; background-color: #fefefb; -webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white; box-shadow: inset 0 1px 0 white; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefb), color-stop(100%, #f8f8df)); background-image: -webkit-linear-gradient(#fefefb, #f8f8df); background-image: -moz-linear-gradient(#fefefb, #f8f8df); background-image: -o-linear-gradient(#fefefb, #f8f8df); background-image: linear-gradient(#fefefb, #f8f8df); }
+.affiliate .affiliate__filter .input, .affiliate .affiliate__filter .select select { padding: 2px 0.5em; height: 25px; border: 1px solid #dddddd; border-top: 1px solid #bbbbbb; font-size: 12px; color: #6b6b6b; width: 166px; outline: none; }
+.affiliate .affiliate__filter .input:-moz-placeholder, .affiliate .affiliate__filter .input::-moz-placeholder, .affiliate .affiliate__filter .select select:-moz-placeholder, .affiliate .affiliate__filter .select select::-moz-placeholder { color: #6b6b6b; opacity: 1; }
+.affiliate .affiliate__filter .input::-webkit-input-placeholder, .affiliate .affiliate__filter .select select::-webkit-input-placeholder { color: #6b6b6b; }
+.affiliate .affiliate__filter .select { position: relative; height: 25px; background: white; }
+.affiliate .affiliate__filter .select > i { position: absolute; top: 50%; margin-top: -8px; right: 6px; background: url('../img/icons-s4627931396.png') 0 0 no-repeat; width: 17px; height: 16px; }
+.affiliate .affiliate__filter .select select { position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; -webkit-appearance: none; -moz-appearance: none; appearance: normal; text-indent: 0.01px; text-overflow: ""; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; background: transparent; }
+.affiliate .affiliate__filtercol { display: table-cell; padding-left: 20px; }
+.affiliate .affiliate__filtercol:first-child { padding-left: 0; }
+.affiliate .affiliate__filtercol.affiliate__filtercol_action { vertical-align: bottom; }
+.affiliate .affiliate__filterrow { margin-top: 10px; }
+.affiliate .affiliate__filterrow:first-child { margin-top: 0; }
+.affiliate .affiliate__filterlabel { display: inline-block; vertical-align: middle; color: #666666; margin-right: 5px; }
+.affiliate .affiliate__filtergroup { display: inline-block; vertical-align: middle; }
+.affiliate .affiliate__filtergroup .input { width: 72px; }
+.affiliate .affiliate__btn { display: inline-block; font-family: "Tahoma"; font-size: 12px; font-weight: bold; color: white; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; background-color: #fdfdfb; -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #0d97cd), color-stop(100%, #3bbfea)); background-image: -webkit-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: -moz-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: -o-linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); background-image: linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%); line-height: 14px; padding: 7px 28px; white-space: nowrap; text-decoration: none; }
+.affiliate .affiliate__btn.affiliate__btn_lg { padding: 12px 33px; }
+.affiliate .affiliate__btn.affiliate__btn_act { background-color: #ef9515; background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(-124.08%, #ef4541), color-stop(23.92%, #ef9b1f)); background-image: -webkit-linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%); background-image: -moz-linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%); background-image: -o-linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%); background-image: linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%); }
+.affiliate .affiliate__table table { background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ef9615), color-stop(100%, #ef4642)); background-image: -webkit-linear-gradient(left, #ef9615, #ef4642); background-image: -moz-linear-gradient(left, #ef9615, #ef4642); background-image: -o-linear-gradient(left, #ef9615, #ef4642); background-image: linear-gradient(left, #ef9615, #ef4642); }
+.affiliate .affiliate__table th, .affiliate .affiliate__table td { padding: 25px 15px; text-align: center; font-size: 11px; vertical-align: middle; }
+.affiliate .affiliate__table th { color: white; font-weight: normal; padding: 18px 15px; border: 1px solid transparent; }
+.affiliate .affiliate__table td { background: white; border: 1px solid #dddddd; border-width: 0 1px 1px 1px; line-height: 18px; }
+.affiliate .affiliate__table .nowrap { white-space: nowrap; }
+.affiliate .affiliate__table .gray { color: #a3a3a3; }
+.affiliate .affiliate__table .brown { color: #807460; }
+.affiliate .affiliate__table .pseudo { text-decoration: none; border-bottom: 1px dotted #006699; }
+.affiliate .affiliate__table .pseudo:hover { border-color: #cc0000; }
+.affiliate .affiliate__tableborder { position: relative; top: -1px; height: 2px; background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ef9615), color-stop(100%, #ef4642)); background-image: -webkit-linear-gradient(left, #ef9615, #ef4642); background-image: -moz-linear-gradient(left, #ef9615, #ef4642); background-image: -o-linear-gradient(left, #ef9615, #ef4642); background-image: linear-gradient(left, #ef9615, #ef4642); }
+.affiliate .affiliate__price { font-size: 12px; font-weight: bold; }
+.affiliate .affiliate__country { position: relative; margin-left: 20px; }
+.affiliate .affiliate__flag { position: absolute; top: 2px; left: -20px; }
+.affiliate .affiliate__flag img { display: block; }
+.affiliate .affiliate__progress.affiliate__progress_todo { color: #e64545; }
+.affiliate .affiliate__progress.affiliate__progress_doing { color: #ff9900; }
+.affiliate .affiliate__progress.affiliate__progress_done { color: #78c922; }

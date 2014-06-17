@@ -1,0 +1,169 @@
+// @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
+
+.page-affiliate
+	line-height: 1.3
+	+font-smoothing
+	+box
+
+.affiliate
+
+	.affiliate__topper
+		margin-bottom: 20px
+
+	.affiliate__action
+		display: table-cell
+		padding-left: 25px
+
+	.affiliate__stats
+		margin-top: 12px
+		font-size: 11px
+		color: #a3a3a3
+		p
+			margin: 3px 0
+	.affiliate__statsnum
+		font-weight: bold
+		color: #000
+
+	.affiliate__filter
+		display: table-cell
+		padding: 20px
+		border: 1px solid #e5dfbf
+		+border-radius(5px)
+		background-color: #fefefb
+		+box-shadow(inset 0 1px 0 #fff)
+		+g(#fefefb, #f8f8df)
+		.input, .select select
+			padding: 2px .5em
+			height: 25px
+			border: 1px solid #ddd
+			border-top: 1px solid #bbb
+			font-size: 12px
+			color: #6b6b6b
+			width: 166px
+			+placeholder-color(#6b6b6b)
+			outline: none
+		.select
+			position: relative
+			height: 25px
+			background: #fff
+			> i
+				position: absolute
+				top: 50%
+				margin-top: -8px
+				right: 6px
+				+s(arrow)
+			select
+				position: absolute
+				z-index: 1
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				-webkit-appearance: none
+				-moz-appearance: none
+				appearance: normal
+				text-indent: 0.01px
+				text-overflow: ''
+				+border-radius(0)
+				background: transparent
+	.affiliate__filtercol
+		display: table-cell
+		padding-left: 20px
+		&:first-child
+			padding-left: 0
+		&.affiliate__filtercol_action
+			vertical-align: bottom
+	.affiliate__filterrow
+		margin-top: 10px
+		&:first-child
+			margin-top: 0
+	.affiliate__filterlabel
+		display: inline-block
+		vertical-align: middle
+		color: #666
+		margin-right: 5px
+	.affiliate__filtergroup
+		display: inline-block
+		vertical-align: middle
+		.input
+			width: 72px
+
+	.affiliate__btn
+		display: inline-block
+		font-family: "Tahoma"
+		font-size: 12px
+		font-weight: bold
+		color: #fff
+		+font-smoothing
+		+text-shadow(0 -1px 0 rgba(0,0,0,.15))
+		+border-radius(5px)
+		background-color: #fdfdfb
+		+box-shadow(0 1px 5px rgba(#000, .15))
+		+background-image(linear-gradient(bottom, #0d97cd 0%, #3bbfea 100%))
+		line-height: 14px
+		padding: 7px 28px
+		white-space: nowrap
+		text-decoration: none
+		&.affiliate__btn_lg
+			padding: 12px 33px
+		&.affiliate__btn_act
+			background-color: #ef9515
+			+background-image(linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%))
+
+	.affiliate__table
+		table
+			+gh(#ef9615, #ef4642)
+		th, td
+			padding: 25px 15px
+			text-align: center
+			font-size: 11px
+			vertical-align: middle
+		th
+			color: #fff
+			font-weight: normal
+			padding: 18px 15px
+			border: 1px solid transparent
+		td
+			background: #fff
+			border: 1px solid #ddd
+			border-width: 0 1px 1px 1px
+			line-height: 18px
+		.nowrap
+			white-space: nowrap
+		.gray
+			color: #a3a3a3
+		.brown
+			color: #807460
+		.pseudo
+			text-decoration: none
+			border-bottom: 1px dotted #069
+			&:hover
+				border-color: #c00
+	.affiliate__tableborder
+		position: relative
+		top: -1px
+		height: 2px
+		+gh(#ef9615, #ef4642)
+
+	.affiliate__price
+		// white-space: nowrap
+		font-size: 12px
+		font-weight: bold
+	.affiliate__country
+		position: relative
+		margin-left: 20px
+	.affiliate__flag
+		position: absolute
+		top: 2px
+		left: -20px
+		img
+			display: block
+	.affiliate__progress
+		&.affiliate__progress_todo
+			color: #e64545
+		&.affiliate__progress_doing
+			color: #ff9900
+		&.affiliate__progress_done
+			color: #78c922
+
+

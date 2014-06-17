@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+		<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UA4CV1NVGwAAXVdWBwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+				<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+				<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+				<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/" />
+				<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+				<meta name="robots" content="noyaca" />
+				<meta name="robots" content="noodp" />
+				<title>Бесплатная помощь в поиске недвижимости на Tranio.Ru</title>
+		<link rel="stylesheet" href="http://tranio.ru/.django_compressor_cache/css/a181cd3568dd.css" type="text/css" media="all" /><link rel="stylesheet" href="http://tranio.ru/.django_compressor_cache/css/5e5231507fa1.css" type="text/css" />
+		<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/css/ie_style.css?1396018337" media="all" /><![endif]-->
+				<script type="text/javascript" src="http://yandex.st/jquery/1.8.3/jquery.min.js"></script>
+
+			<link rel="stylesheet" media="screen" href="css/screen.css" >
+		</head>
+		<body class="lang-ru">
+				<!--noindex--><div id="csrfmiddlewaretoken" style="display: none;">f912211db71b56f892f80e77746d0e3c</div><!--/noindex-->
+<div class="container header lang-ru">
+		
+
+		
+		
+<script type="text/javascript">
+				var traniouser = {id: 0, is_staff: false, is_superuser: false, groups: []};
+				//скрытие чата olark для авторизованных
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+<div class="header">
+		
+		<div class="logo">
+				<span class="e">
+								<a href="/" title="Tranio.Ru - энциклопедия зарубежной недвижимости"><div class="img-logo" title="Tranio.Ru - энциклопедия зарубежной недвижимости"></div></a>
+								<span class="l">
+												Зарубежная недвижимость
+								</span>
+				</span>
+				<div class="adcount" style="display: none">134 096</div>
+		</div>
+		
+		<div id="user-id" style="display: none">0</div>
+
+		
+				
+<div class="user-menu">
+		
+
+				<div class="lead-button">
+						
+						<p class="block-title">Позвольте вам помочь!</p>
+						
+						<div class="blue-button show-lead">Консьерж-сервис Tranio.Ru <img class="winwin" src="http://tranio.ru/i/winwin-white.png" width="12" height="11" alt="" />
+						</div>
+				</div>
+
+		
+		<div class="user-links item">
+				
+				<span class="add-top-menu">
+				<a href="/my-adt/create/">
+						Подать объявление
+				</a>
+				</span>
+		
+				
+						<!--noindex-->
+						<div class="auth">
+										
+										<div class="show-auth">
+												<a href="javascript:void(0)" class="e-authlink"><span>Вход для продавцов</span></a>
+										</div>
+										
+										<div class="auth-popap">
+												<div class="form auth">
+														<span class="st"></span>
+														<span class="close">×</span>
+														<form action="https://tranio.ru/login/" method="post">
+																<label for="auth-email">Эл. почта</label><p><input type="text" name="username" class="text required" /></p>
+																<label for="auth-password">Пароль</label><p><input type="password" name="password" class="text required" /></p>
+																<p><input type="hidden" name="csrfmiddlewaretoken" value="f912211db71b56f892f80e77746d0e3c" /><input type="submit" value="Войти" class="button" /> <a href="/restore-password/" rel="nofollow">Вспомнить пароль</a></p>
+														</form>
+												</div>
+										</div>
+						</div><!-- /.auth -->
+						<!--/noindex-->
+				
+		</div>
+
+</div>
+
+		
+
+		
+<div class="top-menu">
+		<ul class="menu-small">
+						<div class="two-columns">
+								<div class="col col1">
+		<li><a href="/luxury/" class="luxury" >Элитная недвижимость</a> <span class="sup">13 470</span></li>
+<li class="favorites highlight-new">
+		<a href="javascript:void(0)">Избранное</a>
+</li>
+		<li class="about"><a href="/about/">О проекте</a></li>
+								</div>
+								<div class="col col2">
+		<li><a href="/countries/">Страны</a></li>
+		<li><a href="/articles/">Новости и обзоры</a></li>
+		<li><a href="/qna/">Вопросы и ответы</a></li>
+								</div>
+						</div>
+						<div class="three-columns">
+								<div class="col col1">
+		<li><a href="/luxury/" class="luxury" >Элитная недвижимость</a> <span class="sup">13 470</span></li>
+<li class="favorites highlight-new">
+		<a href="javascript:void(0)">Избранное</a>
+</li>
+								</div>
+								<div class="col col2">
+		<li><a href="/articles/">Новости и обзоры</a></li>
+		<li><a href="/qna/">Вопросы и ответы</a></li>
+								</div>
+								<div class="col col3">
+		<li><a href="/countries/">Страны</a></li>
+		<li class="about"><a href="/about/">О проекте</a></li>
+								</div>
+						</div>
+						<div class="favorites-list-wrap">
+								<div class="favorites-button">
+										<span class="icon"></span>
+										<span class="text">Избранное</span>
+								</div>
+								<div class="favorites-list">
+										<div class="items"></div>
+										<div class="tools" data-adt-id="all">
+												<span class="send-favorites-wrap initial">
+														<span class="icon"></span>
+														<a href="javascript:void(0)" data-ids="all" class="send-favorite initial">Отправить избранное на email</a>
+														<span class="send-success">Объявления отправлены.</span>
+														<a href="javascript:void(0)" data-ids="all" class="send-favorite more">Хотите отправить ещё на один email?</a>
+												<div class="send-favorite-form">
+														<div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='c00d320040966b181c4c466beac0f661' /></div>
+														<a class="close" href="javascript:void(0)"></a>
+														<label>Отправить на email:</label>
+														<input type="text" class="email"/>
+														<a class="a-styled-button submit" href="javascript:void(0)">Отправить</a>
+												</div>
+										</div>
+										<div class="empty-message">Вы можете добавить объекты в избранное с карточки или из списка</div>
+								</div>
+						</div>
+				<div class="clr"></div>
+		</ul>
+</div>
+		<div class="line qs-wrapper">
+				<div class="barzer-wrap">
+						<div class="barzer-title">
+								<p class="describe">Что вы ищете?</p>
+								<a class="rent tab inactive" href="javascript:void(0)">Арендовать</a>
+								<a class="buy tab active" href="javascript:void(0)">Купить</a>
+						</div>
+						<div class="barzer-body">
+						<form action="/quicksearch/" method="get" class="quicksearch-new dimmed">
+								<input type="text" name="text" class="default quicksearch-new-input" autocomplete="off" />
+								<div class="quicksearch-new-barzer"><span class="search-trigger">Найти</span></div>
+						</form>
+						</div>
+				</div>
+				<p class="advanced"><a href="/search/">Расширенный поиск</a></p>
+		</div>
+
+		
+		<div class="clr"></div>
+
+		
+
+		<div class="clr"></div>
+		<div class="clr"></div>
+</div><!-- /.header -->
+
+		<div class="clr"></div>
+</div><!-- /.container -->
+
+<div class="page-assistance page-affiliate">
+	<div class="main">
+
+		<!-- begin affiliate -->
+		<div class="affiliate container">
+			<!-- begin affiliate__topper -->
+			<div class="affiliate__topper">
+				<div class="affiliate__filter">
+					<div class="affiliate__filtercol">
+						<div class="affiliate__filterrow">
+							<input type="text" class="input" placeholder="Номер" />
+						</div>
+						<div class="affiliate__filterrow">
+							<div class="select">
+								<i></i>
+								<select>
+									<option value="0">Тип заявки</option>
+									<option value="1">...</option>
+									<option value="2">...</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="affiliate__filtercol">
+						<div class="affiliate__filterrow">
+							<input type="text" class="input" placeholder="Страна/Регион" />
+						</div>
+						<div class="affiliate__filterrow">
+							<div class="select">
+								<i></i>
+								<select>
+									<option value="0">Статус</option>
+									<option value="1">...</option>
+									<option value="2">...</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="affiliate__filtercol">
+						<div class="affiliate__filterrow">
+							<div class="affiliate__filterlabel">Бюджет</div>
+							<label class="affiliate__filtergroup">
+								<span>от</span>
+								<input type="text" class="input" placeholder="" />
+							</label>
+							<label class="affiliate__filtergroup">
+								<span>до</span>
+								<input type="text" class="input" placeholder="" />
+							</label>
+						</div>
+						<div class="affiliate__filterrow">
+							<div class="select">
+								<i></i>
+								<select>
+									<option value="0">Вид недвижимости</option>
+									<option value="1">...</option>
+									<option value="2">...</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="affiliate__filtercol">
+						<div class="affiliate__filterrow">
+							<input type="text" class="input" placeholder="Имя клиента" />
+						</div>
+						<div class="affiliate__filterrow">
+							<input type="text" class="input" placeholder="E-mail клиента" />
+						</div>
+					</div>
+					<div class="affiliate__filtercol affiliate__filtercol_action">
+						<button class="affiliate__btn">Найти</button>
+					</div>
+				</div>
+				<div class="affiliate__action">
+					<a href="#" class="affiliate__btn affiliate__btn_act affiliate__btn_lg">Добавить клиента</a>
+					<div class="affiliate__stats">
+						<p>Доля в коммиссии Tranio: <span class="affiliate__statsnum">30%</span></p>
+						<p>Передано клиентов: <span class="affiliate__statsnum">19</span></p>
+					</div>
+				</div>
+			</div>
+			<!-- end affiliate__topper -->
+			<!-- begin affiliate__table -->
+			<div class="affiliate__table">
+				<table>
+					<thead>
+						<tr>
+							<th>№&nbsp;и&nbsp;дата</th>
+							<th>Тип заявки</th>
+							<th>Клиент</th>
+							<th>Цена</th>
+							<th>Регион</th>
+							<th>Вид недвижимости</th>
+							<th>Комментарий<br /> клиента</th>
+							<th>Лид передан</th>
+							<th>История действий</th>
+							<th>Статус</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p class="gray">123042</p>
+								<p><strong>12.12.13</strong></p>
+							</td>
+							<td>Аренда</td>
+							<td>
+								<p><strong>Ольга Николаева</strong></p>
+								<p><a href="#">olga@mezdunarnedvizh.ru</a></p>
+								<p>+7 (495) 509-37-41</p>
+							</td>
+							<td>
+								<div class="affiliate__price">$&nbsp;5&nbsp;000&nbsp;000</div>
+							</td>
+							<td>
+								<p class="affiliate__country"><span class="affiliate__flag"><img src="img/flag.jpg" alt="flag" /></span>Великобритания</p>
+								<p><strong>Сейнт Бридес
+								-супер-Или</strong></p>
+							</td>
+							<td>
+								<p>Коттедж</p>
+							</td>
+							<td>
+								<p class="brown">Занимаются&nbsp;консалтингом по эмиграции. <a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p><strong>6</strong></p>
+							</td>
+							<td>
+								<p class="gray">06.10.2013</p>
+								<p>Звонок&nbsp;партнёру</p>
+								<p><a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p class="affiliate__progress affiliate__progress_todo">Работа не&nbsp;начата</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="gray">123042</p>
+								<p><strong>12.12.13</strong></p>
+							</td>
+							<td>Аренда</td>
+							<td>
+								<p><strong>Ольга Николаева</strong></p>
+								<p><a href="#">olga@mezdunarnedvizh.ru</a></p>
+								<p>+7 (495) 509-37-41</p>
+							</td>
+							<td>
+								<div class="affiliate__price">$&nbsp;5&nbsp;000&nbsp;000</div>
+							</td>
+							<td>
+								<p class="affiliate__country"><span class="affiliate__flag"><img src="img/flag.jpg" alt="flag" /></span>Великобритания</p>
+								<p><strong>Сейнт Бридес
+								-супер-Или</strong></p>
+							</td>
+							<td>
+								<p>Коттедж</p>
+							</td>
+							<td>
+								<p class="brown">Занимаются&nbsp;консалтингом по эмиграции. <a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p><strong>6</strong></p>
+							</td>
+							<td>
+								<p class="gray">06.10.2013</p>
+								<p>Звонок&nbsp;партнёру</p>
+								<p><a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p class="affiliate__progress affiliate__progress_doing">Обработка</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="gray">123042</p>
+								<p><strong>12.12.13</strong></p>
+							</td>
+							<td>Аренда</td>
+							<td>
+								<p><strong>Ольга Николаева</strong></p>
+								<p><a href="#">olga@mezdunarnedvizh.ru</a></p>
+								<p>+7 (495) 509-37-41</p>
+							</td>
+							<td>
+								<div class="affiliate__price">$&nbsp;5&nbsp;000&nbsp;000</div>
+							</td>
+							<td>
+								<p class="affiliate__country"><span class="affiliate__flag"><img src="img/flag.jpg" alt="flag" /></span>Великобритания</p>
+								<p><strong>Сейнт Бридес
+								-супер-Или</strong></p>
+							</td>
+							<td>
+								<p>Коттедж</p>
+							</td>
+							<td>
+								<p class="brown">Занимаются&nbsp;консалтингом по эмиграции. <a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p><strong>6</strong></p>
+							</td>
+							<td>
+								<p class="gray">06.10.2013</p>
+								<p>Звонок&nbsp;партнёру</p>
+								<p><a href="#" class="pseudo">Подробнее</a></p>
+							</td>
+							<td>
+								<p class="affiliate__progress affiliate__progress_done">Лид передан</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="affiliate__tableborder"></div>
+			</div>
+			<!-- end affiliate__table -->
+		</div>
+		<!-- end affiliate -->
+
+	</div><!-- /.main -->
+</div>
+
+		<div id="fb-root"></div>
+		<div class="cr-win cr-win-lead lead-popup-template" style="display: none;">
+				<div class="bg"></div>
+				<div class="wr"><div class="cnt">
+<!--noindex-->
+<dl class="lead in-popup help">
+		<dt>
+				<a href="javascript:void(0)" class="lead-close"></a>
+				<h3 class="lead-title">
+										Бесплатная помощь в поиске недвижимости
+				</h3>
+		</dt>
+		<dd class="normal">
+				<div class="hint hint1">
+						<span style="display: none;" class="lead-hide-open">
+												Просто напишите в свободной форме, что вам нужно. Мы свяжемся с вами и предложим подходящие варианты.
+						</span>
+						<span class="lead-show-open" style="">
+								Просто напишите в свободной форме, что вам нужно:
+						</span>
+				</div>
+				<textarea name="lead-comment" rows="5" class="lead-comment"></textarea>
+				<div class="lead-cut" style="display: block;">
+						<div class="hint hint2">
+								<div class="arrow-border"></div>
+								<div class="arrow"></div>
+								<span>Напишите здесь страны (регионы), тип недвижимости, желательную цену, площадь, количество комнат и любые другие сведения о недвижимости, которые для вас важны.</span>
+						</div>
+						<dl class="f lead-name">
+								<dd class="hn error"><div class="content">x</div><span class="st"></span></dd>
+								<dt><label for="lead-name">Ваше имя:</label></dt>
+								<dd>
+									<input name="lead-name" class="text" type="text" maxlength="75" />
+								</dd>
+						</dl>
+						<dl class="f lead-phone">
+								<dd class="hn error"><div class="content">x</div><span class="st"></span></dd>
+								<dt><label for="lead-phone">Телефон:</label></dt>
+								<dd>
+									<input name="lead-phone" class="text" type="text" maxlength="75" />
+								</dd>
+						</dl>
+						<dl class="f lead-email">
+								<dd class="hn error"><div class="content">x</div><span class="st"></span></dd>
+								<dt><label for="lead-email">Email:</label></dt>
+								<dd>
+									<input name="lead-email" class="text" type="text" maxlength="75" />
+								</dd>
+						</dl>
+						<div style="display: none;" class="lead-failure">Произошла ошибка. Попробуйте отправить заявку повторно через некоторое время.</div>
+				</div>
+				<table class="lead-buttons">
+						<tbody>
+								<tr>
+										<td class="lead-form-submit lead-submit">
+												<input type="button" value="Отправить заявку" class="button" id="lead_submit" />
+										</td>
+										<td id="how-works">
+												<div class="lead-htw">
+														<a href="/assistance/" rel="nofollow">Как это работает</a>
+												<div>
+										</td>
+								</tr>
+						</tbody>
+				</table>
+		</dd>
+		<dd style="display: none;" class="waiting">
+				<div>
+						<span>Ваша заявка отправляется...</span>
+						<img src="http://tranio.ru/i/megaloader.gif" width="96" height="96" alt="" />
+				</div>
+		</dd>
+</dl>
+<!--/noindex-->
+				</div></div>
+		</div>
+<div class="js-sticky-limit js-rotation-limit">&nbsp;</div>
+<div class="pre-footer"> </div>
+<div class="footer">
+		<div class="container">
+				<div class="l-col copy">
+						<p><span class="c">©</span>2010–2014 ООО «Транио»<br />
+								Написать нам письмо: info<a href="mailto:info@tranio.ru" class="a-email" rel="nofollow">@</a>tranio.ru<br />
+								<span style="font-weight: bold;">8 800 333-10-85</span><br>
+								<span style="font-weight: bold;">+380 443 92-06-70</span>
+						</p>
+								<p class="footer-contacts-link-wrapper"><a href="/contacts/" class="footer-contacts-link" rel="nofollow">Контакты Tranio.Ru</a></p>
+								<p class="sitemap"><a href="/sitemap/" rel="nofollow">Карта сайта</a></p>
+<div id="currency-switcher" class="not-index with-create-link">
+<form action="/set-currency/" id="currency-form" method="post">
+		<input type="hidden" name="csrfmiddlewaretoken" value='f912211db71b56f892f80e77746d0e3c' />
+		Валюта
+		<select name="currency" id="currency-selector" class="rur">
+						<option value="e"selected="selected">€</option>
+						<option value="u">$</option>
+						<option value="r">р</option>
+						<option value="g">£</option>
+		</select>
+		<input type="hidden" name="href" id="return-href" />
+</form>
+</div>
+								<p class="rambler">
+										<!-- begin of Top100 code -->
+										<script id="top100Counter" type="text/javascript" src="http://scounter.rambler.ru/top100.jcn?2564033"></script>
+								<noscript>
+										<a href="http://top100.rambler.ru/navi/2564033/" rel="nofollow">
+												<img src="http://scounter.rambler.ru/top100.cnt?2564033" alt="Rambler's Top100" border="0" />
+										</a>
+								</noscript>
+								<!-- end of Top100 code -->
+								</p>
+				</div>
+				<div class="r-col">
+						<div class="right search">
+										<div class="yandex-search-wrapper">
+												<div class="ya-site-form ya-site-form_inited_no" onclick="return {'bg': 'transparent', 'publicname': 'Yandex Site Search #2062453', 'target': '_blank', 'language': 'ru', 'suggest': true, 'tld': 'ru', 'site_suggest': true, 'action': 'http://yandex.ru/sitesearch', 'webopt': false, 'fontsize': 12, 'arrow': false, 'fg': '#000000', 'searchid': '2062453', 'logo': 'rb', 'websearch': false, 'type': 3}"><form action="http://yandex.ru/sitesearch" method="get" target="_blank"><input type="hidden" name="searchid" value="2062453" /><input type="hidden" name="l10n" value="ru" /><input type="hidden" name="reqenc" value="" /><input type="text" name="text" value="" /><input type="submit" value="Найти" /></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;(' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1&&(e.className+=' ya-page_js_yes');s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+										</div>
+								<div class="social-buttons">
+										<p>
+												<a href="/rss/" class="r" rel="nofollow" target="_blank">RSS</a>
+										</p>
+										<p>
+												<a href="http://instagram.com/tranioru" class="instagram" rel="nofollow" target="_blank">Наш инстаграм</a>
+										</p>
+										<div id="fb-like-widget">
+												<div class="fb-like-box" data-href="http://www.facebook.com/TranioRu" data-width="292" data-show-faces="false" data-stream="false" data-header="false"></div>
+										</div>
+								</div>
+						</div>
+						<div class="mt">
+										<p><a href="/my-adt/create/" class="add" rel="nofollow">+ Создать объявление</a></p>
+								<p class="ads-stats-partners">
+										<a href="/advertising/" class="ads" rel="nofollow">Реклама на сайте</a>
+												<a href="/stats/" class="stats" rel="nofollow">Статистика</a>
+										<a href="/partners/" class="partners" rel="nofollow">Партнёры</a><br/>
+										<!--<a href="/partnership/">Партнёрская программа Tranio.Ru</a>-->
+								</p>
+										<p class="subscription">
+												<a class="subscribe-title" href="javascript:void(0);">Подписка на новости</a>
+												<a class="subscribe-promo-link" href="http://promo.tranio.ru/">Продвижение сайта</a>
+										</p>
+										<div class="subscribe">
+												<div class="pop-window cr-win-subscribe">
+														<div class="bg"></div>
+														<div class="wr"><div class="cnt">
+																<div id="subscribe-form" style="display: block;">
+																		<div class="title" style="height: 40px;">
+																				<a href="#" class="close"></a>
+																				<div style="padding-top: 5px;" class="subscribe-header">Подписаться на новости Tranio.Ru</div>
+																		</div>
+																		<div class="win-content">
+																				<div class="m-column">
+																						<div class="desc text">
+																								Оставьте свой email, если хотите получать свежие материалы от Tranio.Ru:
+																								<ul class="a-ul-tiret">
+																										<li>новости мирового рынка недвижимости,</li>
+																										<li>интересные объекты в нашем каталоге,</li>
+																										<li>усовершенствования и новые возможности сайта Tranio.Ru.</li>
+																								</ul>
+																						</div>
+																						<dl class="f">
+																								<dd class="hn error email-error" style="display: none;"><label for="s-email"><div class="content">-Пожалуйста, укажите адрес своей электронной почты</div><span class="st"></span></label></dd>
+																								<dt style="padding-right: 1em;"><label for="s-email">Email:</label></dt>
+																								<dd><input type="text" name="email" id="s-email" class="text" maxlength="70" style="width: 18em; font-size:1.2em;" /></dd>
+																						</dl>
+																						<div class="desc" style="color: #BBB;">Если наши новости вам не понравятся, вы сможете в любой момент отписаться от них одним щелчком.</div>
+																				</div>
+																		</div>
+																		<div class="buttons">
+																				<input type="submit" value="Подписаться" class="s-submit button" />
+																				<a href="#" class="dt cancel"><span>Спасибо, не надо</span></a>
+																		</div>
+																</div>
+																<div id="subscribe-form-success" style="display: none;">
+																		<div class="title message" style="height: 89px; padding-bottom: 1px; background: #F6F6F6;">
+																				<a href="#" class="close"></a>
+																				<div class="complete"><span class="i"></span>Вы подписались на рассылку новостей Tranio.Ru</div>
+																		</div>
+																		<div class="win-content">
+																				<div class="desc">
+																						<p>
+																								Теперь вы будете в курсе всего происходящего на сайте
+																						</p>
+																						<p>
+																								Если у вас появятся пожелания по поводу рассылки, пишите нам на почту info<a href="mailto:info@tranio.ru" class="a-email">@</a>tranio.ru!
+																						</p>
+																				</div>
+																		</div>
+																		<div class="buttons">
+																				<a href="#" class="dt cancel"><span>Вернуться на сайт</span></a>
+																		</div>
+																</div>
+														</div></div>
+												</div><!-- /.cr-win -->
+										</div>
+										<p class="link"><a href="/how-to-copy/" rel="nofollow">Мы разрешаем использовать наши материалы, если вы ставите обратную ссылку</a></p>
+										<p class="link">
+												<a href="http://m.tranio.ru/" class="footer-link-to-mobile" onClick="_gaq.push(['_trackEvent', 'UserActions', 'TabletDesktop', 'From desktop to tablet']);">Версия для планшетов</a>
+												<a href="http://tranio.com/assistance/" rel="nofollow" class="footer-link-to-english">Tranio in English</a>
+										</p>
+						</div>
+				</div>
+		</div><!-- /.container -->
+</div><!-- /.footer -->
+	<script type="text/javascript" src="http://tranio.ru/i18n/js/"></script> 
+	<script type="text/javascript" src="http://tranio.ru/.django_compressor_cache/js/ffb73720a9f6.js"></script>
+		<script type="text/javascript" src="http://tranio.ru//js/jquery-ui-1.10.4.custom.min.js"></script> 
+		<script type="text/javascript" src="http://tranio.ru/.django_compressor_cache/js/0bb3b60dffeb.js"></script>
+<script type="text/javascript">
+$(function(){
+		$('body').append("<a href='"+location.protocol+"//www.liveinternet.ru/click' "+
+		"target=_blank><img src='"+location.protocol+"//counter.yadro.ru/hit?t45.1;r"+
+		escape(document.referrer)+((typeof(screen)=="undefined")?"":
+		";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+		screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+		";"+Math.random()+
+		"' alt='' title='LiveInternet' "+
+		"border='0' width='1' height='1'></a>");
+});
+</script>
+<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-17922595-2']);
+		_gaq.push(['_setDomainName', 'tranio.ru']);
+		_gaq.push(['_setAllowLinker', true]);
+		// Поиск картинок
+		_gaq.push(['_addOrganic', 'images.yandex.ru', 'text', true]);
+		// Поиск по блогам
+		_gaq.push(['_addOrganic', 'blogsearch.google.ru', 'q', true]);
+		_gaq.push(['_addOrganic', 'blogs.yandex.ru', 'text', true]);
+		// Поисковики России
+		_gaq.push(['_addOrganic', 'go.mail.ru', 'q']);
+		_gaq.push(['_addOrganic', 'nova.rambler.ru', 'query']);
+		_gaq.push(['_addOrganic', 'nigma.ru', 's']);
+		_gaq.push(['_addOrganic', 'webalta.ru', 'q']);
+		_gaq.push(['_addOrganic', 'aport.ru', 'r']);
+		_gaq.push(['_addOrganic', 'poisk.ru', 'text']);
+		_gaq.push(['_addOrganic', 'km.ru', 'sq']);
+		_gaq.push(['_addOrganic', 'liveinternet.ru', 'q']);
+		_gaq.push(['_addOrganic', 'quintura.ru', 'request']);
+		_gaq.push(['_addOrganic', 'search.qip.ru', 'query']);
+		_gaq.push(['_addOrganic', 'gde.ru', 'keywords']);
+		_gaq.push(['_addOrganic', 'ru.yahoo.com', 'p']);
+		// Поисковики Белоруссии
+		_gaq.push(['_addOrganic', 'tut.by', 'query']);
+		_gaq.push(['_addOrganic', 'all.by', 'query']);
+		// Поисковики Украины
+		_gaq.push(['_addOrganic', 'meta.ua', 'q']);
+		_gaq.push(['_addOrganic', 'bigmir.net', 'z']);
+		_gaq.push(['_addOrganic', 'i.ua', 'q']);
+		_gaq.push(['_addOrganic', 'online.ua', 'q']);
+		_gaq.push(['_addOrganic', 'a.ua', 'query']);
+		_gaq.push(['_addOrganic', 'ukr.net', 'search_query']);
+		_gaq.push(['_addOrganic', 'search.ua', 'q']);
+		_gaq.push(['_addOrganic', 'search.ukr.net', 'search_query']);
+		_gaq.push(['_setSampleRate', '80']);
+		_gaq.push(['_setCampTermKey', 'term']);
+		_gaq.push(['_addIgnoredOrganic', 'tranio']);
+		_gaq.push(['_addIgnoredOrganic', 'tranio.ru']);
+		_gaq.push(['_addIgnoredOrganic', 'транио']);
+		_gaq.push(['_addIgnoredOrganic', 'транио.ру']);
+		_gaq.push(['_addIgnoredOrganic', 'www.tranio.ru']);
+		_gaq.push(['_trackPageview']);
+		$(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		});
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+		(w[c] = w[c] || []).push(function() {
+				try {
+						w.yaCounter1280275 = new Ya.Metrika({id:1280275, enableAll: true, trackHash:true, webvisor:true});
+				} catch(e) {}
+		});
+		var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+		if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f);
+		} else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/1280275" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+		<!--[if IE 8]><script type="text/javascript" src="/js/respond.min.js?1396018337"></script><![endif]-->
+		<script type="text/javascript">
+				var LOCALE = 'ru';
+				$(function(){
+						Tranio.loadPromotedAds('','','','','');
+						$('.user-menu .show-lead').lead_trigger({submit_url: '/lead/popup/'});
+						$('.quicksearch-new-input').each(function() {
+								var $this = $(this), $wrap = $this.parents('.barzer-wrap');
+								$this.quicksearch({container: $('body'),tabs_container: $this.parents('.barzer-wrap').find('.barzer-title'),is_new: true,show_barzer_link: !$wrap.parents('.header').length,counter: ''});
+								$wrap.find('.tab').click(function() {
+										var $this = $(this);
+										if ($this.hasClass('active')) {return false;}
+										$wrap.find('.tab.active').removeClass('active').addClass('inactive');
+										$this.removeClass('inactive').addClass('active');
+										$wrap.find('.quicksearch-new-input').quicksearch('update_tab');
+										return false;
+								});
+						});
+						if (traniouser.id > 0) {
+								$('.throughads-promo-tranio').show();
+								$('.throughads-job').hide();
+						}
+				});
+						window.fbAsyncInit = function() {
+							FB.init({
+									appId      : '189521947733772', // App ID
+									status     : true, // check login status
+									cookie     : true, // enable cookies to allow the server to access the session
+									xfbml      : true  // parse XFBML
+							});
+							FB.Event.subscribe('edge.create', function(targetUrl) {_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);});
+							FB.Event.subscribe('edge.remove', function(targetUrl) {_gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);});
+							FB.Event.subscribe('message.send', function(targetUrl) {_gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);});
+					};
+					(function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0];
+							if (d.getElementById(id)) return;
+							js = d.createElement(s); js.id = id;
+							js.src = "//connect.facebook.net/en_US/all.js";
+							fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+		</script>
+	<script type="text/javascript" src="http://tranio.ru/.django_compressor_cache/js/29826340b4fb.js"></script>
+<script type="text/javascript">
+$(function(){
+		$('.page-assistance .lead.help').lead({
+				submit_url: '/lead/assistance/'
+		}).find('.lead-wtf').hide();
+});
+</script>
+<!-- block for index-map-overlay4 -->
+<script type="text/javascript"
+	src="http://tranio.ru/js/fancybox/source/jquery.fancybox.js">
+</script>
+<link rel="stylesheet"
+	type="text/css"
+	href="http://tranio.ru/js/fancybox/source/jquery.fancybox.css"
+	media="screen">
+<script>
+$(function() {
+		var a_href = $('.index-map-overlay4').attr('href');
+	$('.index-map-overlay4').on('click', function(){
+			if (window._gaq) {
+						_gaq.push(['_trackEvent', 'UserActions', 'VideoPopup', 'AssistancePage']);
+				}
+				$.fancybox.open([
+						{
+								type: 'iframe',
+								href: a_href
+						}
+				], {
+						fitToView	: false,
+						closeClick	: false,
+						openEffect	: 'none',
+						closeEffect	: 'none'
+				});
+				return false;
+		});
+});
+</script>
+<!-- endblock for index-map-overlay4 -->
+		<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","queueTime":0,"licenseKey":"61e6fb54d8","agent":"js-agent.newrelic.com/nr-411.min.js","transactionName":"Zl1SNhFZDBEDVUcMCV8XdhcNWxYLDVgcERRQVlkNTVUDCwwYRQwDRksKAxBLCxEWV10GAw==","applicationID":"3096408","errorBeacon":"bam.nr-data.net","applicationTime":5}</script></body>
+</html>
