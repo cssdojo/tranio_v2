@@ -1,5 +1,13 @@
-head.ready(function() {
+$(document).ready(function() {
 
-	console.log("These aren't the droids you're looking for!");
+	$('.pseudo').on('click', function() {
+		$('.has-tooltip').removeClass('is-active');
+		$(this).parent().addClass('is-active');
+		return false;
+	});
+
+	$(document).on('click', function() {
+		$('.has-tooltip').removeClass('is-active');
+	});
 
 });
