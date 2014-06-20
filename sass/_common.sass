@@ -56,44 +56,46 @@
 		background-color: #fefefb
 		+box-shadow(inset 0 1px 0 #fff)
 		+g(#fefefb, #f8f8df)
-		.input, .select select
-			padding: 2px .5em
-			height: 25px
-			border: 1px solid #ddd
-			border-top: 1px solid #bbb
-			font-size: 12px
-			color: #6b6b6b
-			width: 166px
-			+placeholder-color(#6b6b6b)
-			outline: none
-			&.input_wide
-				width: 183px
-		.select
-			position: relative
-			height: 25px
-			background: #fff
-			&.select_wide
-				width: 238px
-			> i
-				position: absolute
-				top: 50%
-				margin-top: -8px
-				right: 6px
-				+s(arrow)
-			select
-				position: absolute
-				z-index: 1
-				top: 0
-				left: 0
-				width: 100%
-				height: 100%
-				-webkit-appearance: none
-				-moz-appearance: none
-				appearance: normal
-				text-indent: 0.01px
-				text-overflow: ''
-				+border-radius(0)
-				background: transparent
+
+	.input, .select select, .textarea
+		padding: 2px .5em
+		height: 25px
+		border: 1px solid #ddd
+		border-top: 1px solid #bbb
+		font-size: 12px
+		color: #6b6b6b
+		width: 166px
+		+placeholder-color(#6b6b6b)
+		outline: none
+		&.input_wide
+			width: 183px
+
+	.select
+		position: relative
+		height: 25px
+		background: #fff
+		&.select_wide
+			width: 238px
+		> i
+			position: absolute
+			top: 50%
+			margin-top: -8px
+			right: 6px
+			+s(arrow)
+		select
+			position: absolute
+			z-index: 1
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: normal
+			text-indent: 0.01px
+			text-overflow: ''
+			+border-radius(0)
+			background: transparent
 	.affiliate__filtercol
 		display: table-cell
 		vertical-align: top
@@ -153,11 +155,24 @@
 		text-decoration: none
 		&.affiliate__btn_lg
 			padding: 12px 33px
+		&.affiliate__btn_link
+			background: none
+			padding-left: 0
+			padding-right: 0
+			color: #006699
+			-webkit-box-shadow: none
+			box-shadow: none
+			+text-shadow(none)
+			font-weight: normal
+			text-decoration: underline
+			&:hover
+				text-decoration: none
 		&.affiliate__btn_act
 			background-color: #ef9515
 			+background-image(linear-gradient(bottom, #ef4541 -124.08%, #ef9b1f 23.92%))
 
 	.affiliate__table
+		position: relative
 		table
 			+gh(#ef9615, #ef4642)
 		thead
@@ -173,6 +188,9 @@
 			font-weight: normal
 			padding: 18px 15px
 			// border: 1px solid transparent
+		tr:hover
+			td
+				background: #fbfbed
 		td
 			background: #fff
 			border: 1px solid #ddd
@@ -214,7 +232,7 @@
 			+box-shadow(0 1px 5px rgba(#000, .15))
 			padding: 30px 35px
 			text-align: left
-			color: #807460 
+			color: #807460
 			&:before
 				position: absolute
 				bottom: -12px
@@ -276,3 +294,183 @@
 			z-index: 2
 			bottom: -2px
 			color: #807460
+
+	.affiliate__profile
+		position: absolute
+		top: -10px
+		width: 100%
+		+border-radius(10px)
+		background-color: #fff
+		+box-shadow(0 1px 5px rgba(#000, .15))
+		padding-top: 30px
+		z-index: 10
+	.affiliate__profiletitle
+		text-align: center
+		font-size: 24px
+		font-weight: bold
+		margin-bottom: 25px
+	.affiliate__profilesub
+		font-size: 17px
+		font-weight: bold
+		margin-bottom: 30px
+	.affiliate__profileclose
+		position: absolute
+		top: 42px
+		right: 20px
+		+s(close)
+		cursor: pointer
+	.affiliate__profilecols
+		margin-right: -1px
+	.affiliate__profilecol
+		display: table-cell
+		vertical-align: top
+		height: 100%
+		border-left: 1px solid #f0f0f0
+		padding: 30px 45px
+		&:first-child
+			border: none
+			padding-left: 40px
+			padding-right: 40px
+		&.affiliate__profilecol_sidebar
+			background-color: #f7f6eb
+			width: 300px
+	.affiliate__profilerow
+		width: 420px
+		margin-top: 10px
+		margin-right: 30px
+		&.affiliate__profilerow_action
+			margin-left: 179px
+			width: 241px
+			+clr
+			.affiliate__btn
+				float: right
+				&:first-child
+					float: left
+		.input
+			&.input_sm
+				display: inline-block
+				vertical-align: middle
+				width: 52px
+				+ span
+					display: inline-block
+					vertical-align: top
+					padding-left: 10px
+					line-height: 29px
+		.input, .select, .textarea
+			width: 241px
+			margin-bottom: 11px
+		.textarea
+			height: 129px
+			resize: none
+			padding: 0.5em
+		.input, .select select
+			height: 29px
+		.select__add,
+		.select__remove
+			position: absolute
+			top: 3px
+			right: -35px
+			cursor: pointer
+		.select__add
+			+s(add)
+		.select__remove
+			+s(remove)
+			
+	.affiliate__profilelabel
+		display: inline-block
+		vertical-align: top
+		width: 175px
+		text-align: right
+		padding-right: 25px
+		line-height: 29px
+	.affiliate__profilefield
+		display: inline-block
+		vertical-align: top
+	.affiliate__profilecontact
+		padding-top: 50px
+		.affiliate__profilesub
+			margin-bottom: 15px
+		.input
+			height: 29px
+			width: 222px
+			margin-bottom: 10px
+			+placeholder-color(#a4a3a3)
+		.affiliate__profilerow_action
+			width: 222px
+			margin: 19px 0 0
+	.affiliate__profilecard
+		margin-top: -4px
+	.affiliate__profilecard-row
+		margin-top: 20px
+		p
+			margin: 2px 0
+	.affiliate__profilecard-name
+		font-size: 15px
+		font-weight: bold
+	.affiliate__profilecard-skype
+		i
+			position: relative
+			top: -2px
+			display: inline-block
+			vertical-align: middle
+			margin-right: 5px
+			+s(skype)
+	.affiliate__profilecard-add
+		position: relative
+		margin-left: 20px
+		i
+			position: absolute
+			top: 3px
+			left: -16px
+			+s(plus)
+	.affiliate__profilecard-action
+		height: 1px
+		border-top: 1px solid #ececec
+		margin: 48px -45px 0
+	.affiliate__profilecard-actionwrap
+		display: inline-block
+		background: #fff
+		padding: 0 10px
+		position: relative
+		height: 20px
+		top: -10px
+		// margin-left: 45px
+		margin-left: 30px
+	.affiliate__profilecard-actiondel,
+	.affiliate__profilecard-actionedit
+		display: inline-block
+		vertical-align: middle
+		margin: 0 5px
+	.affiliate__profilecard-actiondel
+		+s(del)
+	.affiliate__profilecard-actionedit
+		position: relative
+		top: -1px
+		+s(edit)
+	.affiliate__profiledoc
+		padding-left: 22px
+		width: 180px
+		position: relative
+		margin-bottom: 30px
+	.affiliate__profiledoc-icon
+		+s(doc)
+		position: absolute
+		top: 2px
+		left: 0
+	.affiliate__profiledoc-name
+		font-weight: bold
+		color: #404040
+		margin-bottom: 3px
+	.affiliate__profiledoc-meta
+		color: #9f9f9f
+
+
+
+
+
+
+
+
+
+
+
